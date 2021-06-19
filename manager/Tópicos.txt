@@ -1,3 +1,4 @@
 - Uso do axios pra consumir uma API local(API fake) através da Library JSON-Server
 - Lidamos com o endereço de uma SVG a partir da API utilizando o Expo SVG
 - Trabalhamos com animações utilizando o Lottie 
+- Armazenar informações do usuário  no dispositivo através do Async Storage
