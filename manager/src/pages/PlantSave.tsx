@@ -138,7 +138,7 @@ export function PlantSave() {
 
             <Button 
                title="Cadastrar Planta"
-               onPress={() => {handleSave}}
+               onPress={handleSave}
             />
          </View>
       </View>

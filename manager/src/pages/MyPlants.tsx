@@ -13,8 +13,10 @@ import { Header } from '../components/Header';
 
 import waterdrop from '../assets/waterdrop.png';
 import colors from '../styles/colors';
+import fonts from '../styles/fonts';
 
 import { PlantsProps, loadPlant } from '../libs/storage';
+import { PlantCardSecondary } from '../components/PlantCardSecondary';
 
 export function MyPlants() {
    const [myPlants, setMyPlants] = useState<PlantsProps[]>([]);
@@ -51,27 +53,31 @@ export function MyPlants() {
                source={waterdrop}
                style={styles.spotlightImage}
             />
+
+            <Text style={styles.spotlightText}>
+               {nextWatered}
+            </Text>
          </View>
 
-         <Text style={styles.spotlightText}>
-            {nextWatered}
-         </Text>
+         
 
          <View style={styles.plants}>
             <Text style={styles.plantsTitle}>
                Próximas regadas
             </Text>
-         </View>
 
-         <FlatList
+            <FlatList
             data={myPlants}
             keyExtractor={(item) => String(item.id)}
             renderItem={({ item }) => (
-               <Text>Elemento</Text>
+               <PlantCardSecondary data={item} />              
             )}
             showsVerticalScrollIndicator={false}
             contentContainerStyle={{ flex: 1 }}
-         />
+            />
+         </View>
+
+         
       </View>
    )
 }
@@ -86,19 +92,32 @@ const styles = StyleSheet.create({
       backgroundColor: colors.background
    },
    spotlight: {
-      
+      backgroundColor: colors.blue_light,
+      paddingHorizontal: 20,
+      borderRadius: 20,
+      height: 120,
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
    },
    spotlightImage: {
-
+      width: 60,
+      height: 60
    },
    spotlightText: {
-
+      flex: 1,
+      color: colors.blue,
+      paddingHorizontal: 20,      
    },
    plants: {
-
+      flex: 1,
+      width: '100%'
    },
    plantsTitle: {
-
+      fontSize: 24,
+      fontFamily: fonts.heading,
+      color: colors.heading,
+      marginVertical: 20,
    }
 
 })
