@@ -18,7 +18,7 @@ import { format, isBefore } from 'date-fns';
 
 import { Button } from '../components/Button';
 
-import { loadPlant, PlantsProps, savePlant } from '../libs/storage';
+import { PlantsProps, savePlant } from '../libs/storage';
 
 import colors from '../styles/colors';
 import fonts from '../styles/fonts';
@@ -61,15 +61,16 @@ export function PlantSave() {
       try {
          await savePlant({
             ...plant,
-            dateTimeNotification: selectedDateTime
-         });
+            dateTimeNotification: selectedDateTime,
+            
+         });         
 
          navigation.navigate('Confirmation', { 
             title: 'Tudo Certo!',
             subtitle: 'Fique tranquilo que sempre iremos lembrá-lo  de cuidar da sua plantinha  com muito cuidado',
             buttonTitle: 'Muito Obrigado! :D',
             icon: 'hug',
-            nextScreen: 'MyPlants'
+            nextScreen: 'MyPlants',
          });
 
 
@@ -78,6 +79,8 @@ export function PlantSave() {
          Alert.alert('Não foi possível salvar. 😢')
       }
    }
+
+   
 
    return(
       <View style={styles.container}>
