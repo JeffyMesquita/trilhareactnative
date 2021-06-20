@@ -1,5 +1,13 @@
+- Criação do APP no Ambiente de Desenvolvimento do Expo
+- Básico de UX/UI  
+- React Hooks(useState e useEffect)
+- Uso de FlatList
+- Componentização para reutilização de código
 - Uso do axios pra consumir uma API local(API fake) através da Library JSON-Server
 - Lidamos com o endereço de uma SVG a partir da API utilizando o Expo SVG
 - Trabalhamos com animações utilizando o Lottie 
 - Armazenar informações do usuário  no dispositivo através do Async Storage
 - Uso do DateTimePicker e date-fns para lidar com datas e formatações
+- Mix de Navegação(Stack Navigation e Tab Navigation)
+- Uso do Expo Notifications para ouvir e visualizar notificações agendadas
+- Entre outras coisas
